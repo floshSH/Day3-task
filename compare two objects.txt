@@ -1,0 +1,48 @@
+function compare( obj1, obj2){
+    //return false;
+    let arr1=Object.keys(obj1);
+    let arr2= Object.keys(obj2);
+   // console.log(arr1.length)
+    if(arr1.length == arr2.length){
+        for(let i=0;i< arr1.length;i++){
+            
+            let iden=arr1[i];
+           // let key2=arr2[i];
+           //console.log(obj1[iden])
+            let string2=obj2[iden]
+            let string1=obj1[iden]
+            //console.log(typeof(obj1[iden]))
+           if((string1.localeCompare(string2)) ==0){
+           // console.log(typeof(obj1.name))
+                
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+
+    }
+    else{
+        return false;
+    }
+}
+let obj1= {
+    name : "subash",
+    age : "23" ,
+    place : "Karur",
+    college : "VSB"
+}
+let obj2= {
+    place : "Karur",
+    name : "subash",
+    college : "VSB",
+    age : "23" 
+}
+//console.log(typeof(obj1.name))
+if(compare(obj1, obj2)){
+    console.log("obj1 and obj2 are same")
+}
+else{
+    console.log("obj1 and obj2 are not same")
+}

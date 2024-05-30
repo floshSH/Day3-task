@@ -1,0 +1,13 @@
+
+function reqListener() {
+    const data=JSON.parse(this.responseText)
+    for(let country of data){
+    console.log(country.name.common ," : ", country.flags.svg);
+    }
+    //console.log(data);
+  }
+  
+  const req = new XMLHttpRequest();
+  req.addEventListener("load", reqListener);
+  req.open("GET", "https://restcountries.com/v3.1/all");
+  req.send();
